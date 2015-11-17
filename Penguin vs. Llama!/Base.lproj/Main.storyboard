@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-iD-u63">
-                                <rect key="frame" x="200" y="104" width="200" height="450"/>
+                                <rect key="frame" x="200" y="104" width="200" height="425"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lA6-Yk-wtw">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -33,7 +33,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-Im-Ng2">
-                                        <rect key="frame" x="0.0" y="250" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="225" width="200" height="200"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="MUc-ct-RIg"/>
@@ -53,8 +53,8 @@
                                     <constraint firstItem="5ee-Im-Ng2" firstAttribute="centerX" secondItem="UhF-iD-u63" secondAttribute="centerX" id="7Aa-bV-uof"/>
                                     <constraint firstItem="lA6-Yk-wtw" firstAttribute="top" secondItem="UhF-iD-u63" secondAttribute="top" id="Aiw-SC-oOH"/>
                                     <constraint firstAttribute="width" constant="200" id="IWM-NA-1DT"/>
-                                    <constraint firstItem="5ee-Im-Ng2" firstAttribute="top" secondItem="UhF-iD-u63" secondAttribute="top" constant="250" id="Nyy-Mz-FG9"/>
-                                    <constraint firstAttribute="height" constant="450" id="OqA-He-uX6"/>
+                                    <constraint firstItem="5ee-Im-Ng2" firstAttribute="top" secondItem="UhF-iD-u63" secondAttribute="top" constant="225" id="Nyy-Mz-FG9"/>
+                                    <constraint firstAttribute="height" constant="425" id="OqA-He-uX6"/>
                                     <constraint firstItem="lA6-Yk-wtw" firstAttribute="centerX" secondItem="UhF-iD-u63" secondAttribute="centerX" id="dAp-Sc-Uwp"/>
                                 </constraints>
                             </view>
@@ -63,14 +63,16 @@
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UhF-iD-u63" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SqH-5V-CvR"/>
-                            <constraint firstItem="UhF-iD-u63" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="29" id="WGN-bV-ea6"/>
+                            <constraint firstItem="UhF-iD-u63" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="16.5" id="WGN-bV-ea6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Penguin vs. Llama" id="GEj-qx-Vym"/>
+                    <navigationItem key="navigationItem" title="Penguin vs. Llama" id="GEj-qx-Vym">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="N72-1e-o06"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="535"/>
+            <point key="canvasLocation" x="1464" y="-157"/>
         </scene>
         <!--Photo Table View Controller-->
         <scene sceneID="nOF-5w-3OT">
@@ -82,11 +84,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="AQW-vo-HQg">
-                            <rect key="frame" x="0.0" y="64" width="600" height="75"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penguin or Llama" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3y-J6-j4V">
-                                    <rect key="frame" x="210" y="35" width="180" height="30"/>
+                                    <rect key="frame" x="210" y="10" width="180" height="30"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="01n-r6-6zR"/>
@@ -98,15 +100,21 @@
                                 </label>
                             </subviews>
                             <animations/>
-                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="S3y-J6-j4V" firstAttribute="centerY" secondItem="AQW-vo-HQg" secondAttribute="centerY" id="8un-7e-pBN"/>
                                 <constraint firstItem="S3y-J6-j4V" firstAttribute="centerY" secondItem="AQW-vo-HQg" secondAttribute="centerY" constant="12.5" id="Cw5-Mj-97O"/>
                                 <constraint firstItem="S3y-J6-j4V" firstAttribute="centerX" secondItem="AQW-vo-HQg" secondAttribute="centerX" id="aHL-Fh-QM4"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="Cw5-Mj-97O"/>
+                                </mask>
+                            </variation>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="CWF-te-ErW">
-                                <rect key="frame" x="0.0" y="167" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="142" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CWF-te-ErW" id="qvK-pr-WRn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -127,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4V-Y2-23E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2178" y="535"/>
+            <point key="canvasLocation" x="2191" y="-157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aea-JD-3OL">
