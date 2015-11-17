@@ -55,9 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				E420C0EE1BFBB687007D6FF2 /* AppDelegate.swift */,
+				E420C1031BFBBAAD007D6FF2 /* model */,
+				E420C1001BFBB921007D6FF2 /* view */,
 				E420C1021BFBB945007D6FF2 /* controller */,
 				E420C1011BFBB92A007D6FF2 /* assets */,
-				E420C1001BFBB921007D6FF2 /* view */,
 				E420C0FA1BFBB687007D6FF2 /* Info.plist */,
 			);
 			path = "Penguin vs. Llama!";
@@ -86,6 +87,13 @@
 				E420C0F01BFBB687007D6FF2 /* ViewController.swift */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		E420C1031BFBBAAD007D6FF2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
