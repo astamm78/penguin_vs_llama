@@ -14,7 +14,6 @@ class PhotoTableViewController: UITableViewController {
 
     @IBOutlet weak var tagNameLabel: UILabel?
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
