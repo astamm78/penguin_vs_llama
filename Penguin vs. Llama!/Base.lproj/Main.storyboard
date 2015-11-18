@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-iD-u63">
                                 <rect key="frame" x="200" y="94" width="200" height="425"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penguin-icon" translatesAutoresizingMaskIntoConstraints="NO" id="2z1-yG-d7t">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2z1-yG-d7t">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <animations/>
                                         <gestureRecognizers/>
@@ -32,7 +32,7 @@
                                             <outletCollection property="gestureRecognizers" destination="aEg-x3-Sks" appends="YES" id="wea-fo-fZs"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="llama-icon" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-mq-9Pf">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-mq-9Pf">
                                         <rect key="frame" x="0.0" y="225" width="200" height="200"/>
                                         <animations/>
                                         <gestureRecognizers/>
@@ -197,7 +197,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="llama-icon" width="550" height="550"/>
-        <image name="penguin-icon" width="550" height="550"/>
+        <image name="placeholder" width="400" height="290"/>
     </resources>
 </document>

@@ -9,10 +9,8 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
-    let animalTagArray: [String] = ["Penguins", "Llamas"]
     
-    var animalImagesArray: [UIImageView] = []
+    var animalImageViewsArray: [UIImageView] = []
     
     @IBOutlet weak var penguinImageView: UIImageView!
     @IBOutlet weak var llamaImageView: UIImageView!
@@ -21,7 +19,15 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        animalImagesArray += [penguinImageView, llamaImageView]
+        animalImageViewsArray += [penguinImageView, llamaImageView]
+        
+        for index in 0..<animalImageViewsArray.count {
+            let animal = Animals().data[index]
+            let animalImageView = animalImageViewsArray[index]
+            
+            let imageName = animal["icon"]!
+            animalImageView.image = UIImage(named: imageName)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +40,8 @@ class StartViewController: UIViewController {
         
         if segue.identifier == "showImagesTable" {
             let animalImageView = sender!.view as! UIImageView!
-            if let index = animalImagesArray.indexOf(animalImageView) {
-                let tagName = animalTagArray[index]
+            if let index = animalImageViewsArray.indexOf(animalImageView) {
+                let tagName = Animals().data[index]["tagName"]!
                 sendTagToPhotoView(tagName, view: photoTableViewController)
             }
         }
