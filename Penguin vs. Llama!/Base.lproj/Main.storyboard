@@ -130,7 +130,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="RNR-Yv-Whs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" id="RNR-Yv-Whs">
                                 <rect key="frame" x="0.0" y="142" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNR-Yv-Whs" id="aJw-yc-htt">
@@ -139,6 +139,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="LYS-T5-4LY" kind="show" identifier="showPhoto" action="showDetailViewController:sender:" id="FbN-3I-kYe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -152,7 +155,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqQ-Jx-h41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2233" y="-157"/>
+            <point key="canvasLocation" x="2167" y="-157"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="JWG-pn-PAw">
+            <objects>
+                <viewController id="LYS-T5-4LY" customClass="PhotoViewController" customModule="Penguin_vs__Llama_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Evs-iX-oYD"/>
+                        <viewControllerLayoutGuide type="bottom" id="dIZ-JC-2cG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CYL-5P-s0p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKw-te-oES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2898" y="-157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aea-JD-3OL">

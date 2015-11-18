@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4102C421BFC07A800750265 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4102C411BFC07A800750265 /* PhotoViewController.swift */; };
 		E420C0EF1BFBB687007D6FF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420C0EE1BFBB687007D6FF2 /* AppDelegate.swift */; };
 		E420C0F11BFBB687007D6FF2 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420C0F01BFBB687007D6FF2 /* StartViewController.swift */; };
 		E420C0F41BFBB687007D6FF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E420C0F21BFBB687007D6FF2 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4102C411BFC07A800750265 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		E420C0EB1BFBB687007D6FF2 /* Penguin vs. Llama!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Penguin vs. Llama!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E420C0EE1BFBB687007D6FF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E420C0F01BFBB687007D6FF2 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				E420C0F01BFBB687007D6FF2 /* StartViewController.swift */,
 				E420C1061BFBC0E4007D6FF2 /* PhotoTableViewController.swift */,
+				E4102C411BFC07A800750265 /* PhotoViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E420C0F11BFBB687007D6FF2 /* StartViewController.swift in Sources */,
+				E4102C421BFC07A800750265 /* PhotoViewController.swift in Sources */,
 				E420C1071BFBC0E4007D6FF2 /* PhotoTableViewController.swift in Sources */,
 				E420C0EF1BFBB687007D6FF2 /* AppDelegate.swift in Sources */,
 			);
@@ -323,6 +327,7 @@
 				E420C0FF1BFBB687007D6FF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
