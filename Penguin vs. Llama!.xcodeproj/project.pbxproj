@@ -15,6 +15,7 @@
 		E420C0F91BFBB687007D6FF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E420C0F71BFBB687007D6FF2 /* LaunchScreen.storyboard */; };
 		E420C1071BFBC0E4007D6FF2 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E420C1061BFBC0E4007D6FF2 /* PhotoTableViewController.swift */; };
 		E45267761BFCFCA8007C9521 /* Animals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45267751BFCFCA8007C9521 /* Animals.swift */; };
+		E4D18EA61BFE866700B1DB19 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D18EA51BFE866700B1DB19 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E420C0FA1BFBB687007D6FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E420C1061BFBC0E4007D6FF2 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		E45267751BFCFCA8007C9521 /* Animals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animals.swift; sourceTree = "<group>"; };
+		E4D18EA51BFE866700B1DB19 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E45267751BFCFCA8007C9521 /* Animals.swift */,
+				E4D18EA51BFE866700B1DB19 /* Photo.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D18EA61BFE866700B1DB19 /* Photo.swift in Sources */,
 				E45267761BFCFCA8007C9521 /* Animals.swift in Sources */,
 				E420C0F11BFBB687007D6FF2 /* StartViewController.swift in Sources */,
 				E4102C421BFC07A800750265 /* PhotoViewController.swift in Sources */,
