@@ -49,11 +49,24 @@ class PhotoTableViewController: UITableViewController {
         if let url = NSURL(string: cellPhoto.url!) {
             if let data = NSData(contentsOfURL: url) {
                 cell.cellPhotoImage.image = UIImage(data: data)
-            }        
+                let screenSize: CGRect = UIScreen.mainScreen().bounds
+                let newWidth = screenSize.width
+                let newHeight = cellPhoto.resizedHeight(newWidth)
+                cell.cellPhotoImage.frame = CGRect(x: 0, y: 0, width: newWidth, height: newHeight)
+            }
         }
 
         return cell
     }
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let photo = photos[indexPath.row]
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let newHeight = photo.resizedHeight( screenSize.width )
+        return newHeight
+    }
+    
+    
     
     // MARK: - Photo Fetching
     

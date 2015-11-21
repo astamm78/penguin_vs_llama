@@ -103,7 +103,7 @@
         <scene sceneID="ERV-BJ-RTI">
             <objects>
                 <tableViewController id="5Ph-cL-x3o" customClass="PhotoTableViewController" customModule="Penguin_vs__Llama_" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qZ-lb-DYD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qZ-lb-DYD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -219,7 +219,7 @@
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
                                                     <exclude reference="12w-SB-qDS"/>
-                                                    <include reference="WXt-ty-b16"/>
+                                                    <exclude reference="WXt-ty-b16"/>
                                                 </mask>
                                             </variation>
                                         </imageView>
@@ -245,13 +245,35 @@
                                             <include reference="Krc-Hx-dIF"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="DDt-wg-sOc"/>
-                                            <include reference="hYG-YI-kC9"/>
-                                            <include reference="wcw-Lb-7M6"/>
+                                            <exclude reference="DDt-wg-sOc"/>
+                                            <exclude reference="hYG-YI-kC9"/>
+                                            <exclude reference="wcw-Lb-7M6"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="Krc-Hx-dIF" firstAttribute="top" secondItem="RNR-Yv-Whs" secondAttribute="top" id="2LL-hb-GxQ"/>
+                                    <constraint firstItem="Krc-Hx-dIF" firstAttribute="leading" secondItem="RNR-Yv-Whs" secondAttribute="leading" id="5ag-X7-uSz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Krc-Hx-dIF" secondAttribute="trailing" id="hJX-eY-1d8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Krc-Hx-dIF" secondAttribute="bottom" id="zhC-PH-9xr"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2LL-hb-GxQ"/>
+                                        <exclude reference="5ag-X7-uSz"/>
+                                        <exclude reference="hJX-eY-1d8"/>
+                                        <exclude reference="zhC-PH-9xr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="2LL-hb-GxQ"/>
+                                        <include reference="5ag-X7-uSz"/>
+                                        <include reference="hJX-eY-1d8"/>
+                                        <include reference="zhC-PH-9xr"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="cellPhotoImage" destination="Krc-Hx-dIF" id="N1r-rO-Z8P"/>
                                 </connections>
@@ -269,25 +291,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqQ-Jx-h41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2166" y="-157.5"/>
-        </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="JWG-pn-PAw">
-            <objects>
-                <viewController id="LYS-T5-4LY" customClass="PhotoViewController" customModule="Penguin_vs__Llama_" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Evs-iX-oYD"/>
-                        <viewControllerLayoutGuide type="bottom" id="dIZ-JC-2cG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CYL-5P-s0p">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JKw-te-oES" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2898" y="-157"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aea-JD-3OL">

@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 struct Photo {
     
     var url: String?
     var tbUrl: String?
     var contextUrl: String?
+    var width: Int?
+    var height: Int?
     
     init(photoData: [String: AnyObject]) {
 
@@ -27,7 +30,21 @@ struct Photo {
         if let contextUrl = photoData["originalContextUrl"] as? String {
             self.contextUrl = contextUrl
         }
+
+        if let width = photoData["width"] as? String {
+            let widthInt = Int(width)
+            self.width = widthInt
+        }
         
+        if let height = photoData["height"] as? String {
+            let heightInt = Int(height)
+            self.height = heightInt
+        }
+        
+    }
+    
+    func resizedHeight(screenWidth: CGFloat) -> CGFloat {
+        return (CGFloat(height!) / CGFloat(width!)) * screenWidth
     }
     
 }
