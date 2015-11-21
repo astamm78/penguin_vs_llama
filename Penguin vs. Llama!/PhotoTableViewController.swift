@@ -11,14 +11,16 @@ import UIKit
 class PhotoTableViewController: UITableViewController {
     
     var tagName: String?
+    var photos: [Photo] = []
+    var pageNumber: Int = 1
 
     @IBOutlet weak var tagNameLabel: UILabel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         if let tagNameValue = tagName {
-             tagNameLabel?.text = tagNameValue
+         if let _ = tagName {
+            retrievePhotos()
          }
     }
 
@@ -31,67 +33,44 @@ class PhotoTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return photos.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("PhotoTableViewCell") as! PhotoTableViewCell
 
-        // Configure the cell...
+        let cellPhoto = photos[indexPath.row]
+        
+        if let url = NSURL(string: cellPhoto.url!) {
+            if let data = NSData(contentsOfURL: url) {
+                cell.cellPhotoImage.image = UIImage(data: data)
+            }        
+        }
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - Photo Fetching
+    
+    func retrievePhotos() {
+        let googleImageService = GoogleImageService(tagName: tagName!, start: pageNumber)
+        
+        googleImageService.getPhotos() {
+            (let photos) in
+            if let photoResults = photos {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.photos += photoResults
+                    self.tagNameLabel?.text = "\(self.tagName!)"
+                    
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,51 +8,26 @@
 
 import Foundation
 
-enum PhotoType: String {
-    case Image = "image"
-    case Video = "video"
-}
-
 struct Photo {
     
-    var type: PhotoType?
-    var createdTime: String?
-    var instagramId: String?
-    var instagramUrl: String?
-    var userName: String?
-    var userId: String?
-    
-    let dateFormatter = NSDateFormatter()
+    var url: String?
+    var tbUrl: String?
+    var contextUrl: String?
     
     init(photoData: [String: AnyObject]) {
-        if let photoType = photoData["type"] as? String {
-            type = PhotoType(rawValue: photoType)!
+
+        if let url = photoData["url"] as? String {
+            self.url = url
         }
         
-        if let timeStamp = photoData["created_time"] as? Double {
-            createdTime = dateFromUnixTime(timeStamp)
+        if let tbUrl = photoData["tbUrl"] as? String {
+            self.tbUrl = tbUrl
         }
         
-        if let instagramId = photoData["id"] as? String {
-            self.instagramId = instagramId
+        if let contextUrl = photoData["originalContextUrl"] as? String {
+            self.contextUrl = contextUrl
         }
         
-        if let imagesDict = photoData["images"] as? [String: AnyObject],
-            let standardResolutionDict = imagesDict["standard_resolution"] as? [String: AnyObject],
-            let instagramUrl = standardResolutionDict["url"] as? String {
-                self.instagramUrl = instagramUrl
-        }
-        
-        if let userDict = photoData["user"] as? [String: AnyObject] {
-            userName = userDict["username"] as? String
-            userId = userDict["id"] as? String
-        }
-    }
-    
-    func dateFromUnixTime(timeStamp: Double) -> String {
-        let date = NSDate(timeIntervalSince1970: timeStamp)
-        dateFormatter.dateFormat = "MMMM, d y"
-        return dateFormatter.stringFromDate(date)
     }
     
 }

@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Penguin vs. Llama-->
@@ -101,7 +103,7 @@
         <scene sceneID="ERV-BJ-RTI">
             <objects>
                 <tableViewController id="5Ph-cL-x3o" customClass="PhotoTableViewController" customModule="Penguin_vs__Llama_" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qZ-lb-DYD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qZ-lb-DYD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -114,8 +116,12 @@
                                     <rect key="frame" x="234" y="14" width="132" height="21"/>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="132" id="Vt6-Sm-bM0"/>
-                                        <constraint firstAttribute="height" constant="21" id="Vyx-mv-Zws"/>
+                                        <constraint firstAttribute="width" constant="132" id="Vt6-Sm-bM0">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="384"/>
+                                        </constraint>
+                                        <constraint firstAttribute="height" constant="21" id="Vyx-mv-Zws">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,22 +131,73 @@
                             <animations/>
                             <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="CqP-S1-OOP" firstAttribute="centerY" secondItem="pqT-La-2er" secondAttribute="centerY" id="mWa-R5-31g"/>
+                                <constraint firstItem="CqP-S1-OOP" firstAttribute="centerY" secondItem="pqT-La-2er" secondAttribute="centerY" id="mWa-R5-31g">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                </constraint>
                                 <constraint firstItem="CqP-S1-OOP" firstAttribute="centerX" secondItem="pqT-La-2er" secondAttribute="centerX" id="uWn-vb-OJ1"/>
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" id="RNR-Yv-Whs">
-                                <rect key="frame" x="0.0" y="142" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="200" id="RNR-Yv-Whs" customClass="PhotoTableViewCell" customModule="Penguin_vs__Llama_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="142" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNR-Yv-Whs" id="aJw-yc-htt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Krc-Hx-dIF">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="12w-SB-qDS">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="400"/>
+                                                </constraint>
+                                                <constraint firstAttribute="height" constant="199" id="WXt-ty-b16"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="12w-SB-qDS"/>
+                                                    <exclude reference="WXt-ty-b16"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="12w-SB-qDS"/>
+                                                    <include reference="WXt-ty-b16"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="Krc-Hx-dIF" firstAttribute="leading" secondItem="aJw-yc-htt" secondAttribute="leadingMargin" constant="-8" id="DDt-wg-sOc"/>
+                                        <constraint firstItem="Krc-Hx-dIF" firstAttribute="top" secondItem="aJw-yc-htt" secondAttribute="topMargin" constant="-8" id="hYG-YI-kC9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Krc-Hx-dIF" secondAttribute="trailing" constant="-8" id="wcw-Lb-7M6"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="Krc-Hx-dIF"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="DDt-wg-sOc"/>
+                                            <exclude reference="hYG-YI-kC9"/>
+                                            <exclude reference="wcw-Lb-7M6"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="Krc-Hx-dIF"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="DDt-wg-sOc"/>
+                                            <include reference="hYG-YI-kC9"/>
+                                            <include reference="wcw-Lb-7M6"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="LYS-T5-4LY" kind="show" identifier="showPhoto" action="showDetailViewController:sender:" id="FbN-3I-kYe"/>
+                                    <outlet property="cellPhotoImage" destination="Krc-Hx-dIF" id="N1r-rO-Z8P"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -155,7 +212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqQ-Jx-h41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167" y="-157"/>
+            <point key="canvasLocation" x="2166" y="-157.5"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="JWG-pn-PAw">
