@@ -138,7 +138,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="9SI-Bp-zo2">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="367" width="600" height="128"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-sM-Lr1">
@@ -161,6 +161,9 @@
                                             <include reference="aWK-ss-dPU"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <action selector="loadMorePhotos" destination="5Ph-cL-x3o" eventType="touchUpInside" id="Vtl-jB-wII"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <animations/>
@@ -190,10 +193,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="225" id="RNR-Yv-Whs" customClass="PhotoTableViewCell" customModule="Penguin_vs__Llama_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="142" width="600" height="200"/>
+                                <rect key="frame" x="0.0" y="142" width="600" height="225"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNR-Yv-Whs" id="aJw-yc-htt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="224"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Krc-Hx-dIF">

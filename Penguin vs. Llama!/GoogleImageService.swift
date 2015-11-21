@@ -13,7 +13,7 @@ struct GoogleImageService {
     let clientBaseUrl: NSURL?
     
     init(tagName: String, start: Int) {
-        clientBaseUrl = NSURL(string: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=\(tagName)&as_filetype=jpg&start=\(start * 4)")
+        clientBaseUrl = NSURL(string: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=\(tagName)&as_filetype=jpg&start=\((start - 1) * 4)")
     }
     
     func getPhotos(completion: ([Photo]? -> Void)) {
