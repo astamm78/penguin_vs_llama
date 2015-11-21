@@ -137,8 +137,59 @@
                                 <constraint firstItem="CqP-S1-OOP" firstAttribute="centerX" secondItem="pqT-La-2er" secondAttribute="centerX" id="uWn-vb-OJ1"/>
                             </constraints>
                         </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="9SI-Bp-zo2">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-sM-Lr1">
+                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="G8b-eg-Z24"/>
+                                        <constraint firstAttribute="width" constant="73" id="aWK-ss-dPU"/>
+                                    </constraints>
+                                    <state key="normal" title="Load More"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="G8b-eg-Z24"/>
+                                            <exclude reference="aWK-ss-dPU"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="G8b-eg-Z24"/>
+                                            <include reference="aWK-ss-dPU"/>
+                                        </mask>
+                                    </variation>
+                                </button>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="xvq-sM-Lr1" firstAttribute="centerY" secondItem="9SI-Bp-zo2" secondAttribute="centerY" id="Wmj-WC-DmX"/>
+                                <constraint firstItem="xvq-sM-Lr1" firstAttribute="centerX" secondItem="9SI-Bp-zo2" secondAttribute="centerX" id="eZJ-OH-V5l"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="xvq-sM-Lr1"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="Wmj-WC-DmX"/>
+                                    <exclude reference="eZJ-OH-V5l"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="xvq-sM-Lr1"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="Wmj-WC-DmX"/>
+                                    <include reference="eZJ-OH-V5l"/>
+                                </mask>
+                            </variation>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="200" id="RNR-Yv-Whs" customClass="PhotoTableViewCell" customModule="Penguin_vs__Llama_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoTableViewCell" rowHeight="225" id="RNR-Yv-Whs" customClass="PhotoTableViewCell" customModule="Penguin_vs__Llama_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="142" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNR-Yv-Whs" id="aJw-yc-htt">
@@ -152,7 +203,9 @@
                                                 <constraint firstAttribute="width" constant="240" id="12w-SB-qDS">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="400"/>
                                                 </constraint>
-                                                <constraint firstAttribute="height" constant="199" id="WXt-ty-b16"/>
+                                                <constraint firstAttribute="height" constant="199" id="WXt-ty-b16">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="225"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">

@@ -10,7 +10,6 @@ import Foundation
 
 struct GoogleImageService {
     
-//    let clientID: String = "99904e5df4e842ab87f71dcc49c887cb"
     let clientBaseUrl: NSURL?
     
     init(tagName: String, start: Int) {

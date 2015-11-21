@@ -12,7 +12,7 @@ class PhotoTableViewController: UITableViewController {
     
     var tagName: String?
     var photos: [Photo] = []
-    var pageNumber: Int = 1
+    var pageNumber: Int = 0
 
     @IBOutlet weak var tagNameLabel: UILabel?
 
@@ -57,7 +57,13 @@ class PhotoTableViewController: UITableViewController {
     
     // MARK: - Photo Fetching
     
+    @IBAction func loadMorePhotos() {
+        retrievePhotos()
+    }
+
     func retrievePhotos() {
+        pageNumber += 1
+        
         let googleImageService = GoogleImageService(tagName: tagName!, start: pageNumber)
         
         googleImageService.getPhotos() {
