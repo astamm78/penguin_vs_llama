@@ -16,11 +16,14 @@ struct Photo {
     var contextUrl: String?
     var width: Int?
     var height: Int?
+    var image: UIImage?
     
     init(photoData: [String: AnyObject]) {
 
         if let url = photoData["url"] as? String {
             self.url = url
+            let photoURL = NSURL(string: url)
+            self.image = UIImage(data: dataFromUrl(photoURL!))
         }
         
         if let tbUrl = photoData["tbUrl"] as? String {
@@ -43,8 +46,12 @@ struct Photo {
         
     }
     
-    func resizedHeight(screenWidth: CGFloat) -> CGFloat {
+    func targetHeight(screenWidth: CGFloat) -> CGFloat {
         return (CGFloat(height!) / CGFloat(width!)) * screenWidth
+    }
+    
+    func dataFromUrl(url: NSURL) -> NSData {
+        return NSData(contentsOfURL: url)!
     }
     
 }

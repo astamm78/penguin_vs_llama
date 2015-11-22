@@ -46,14 +46,12 @@ class PhotoTableViewController: UITableViewController {
 
         let cellPhoto = photos[indexPath.row]
         
-        if let url = NSURL(string: cellPhoto.url!) {
-            if let data = NSData(contentsOfURL: url) {
-                cell.cellPhotoImage.image = UIImage(data: data)
-                let screenSize: CGRect = UIScreen.mainScreen().bounds
-                let newWidth = screenSize.width
-                let newHeight = cellPhoto.resizedHeight(newWidth)
-                cell.cellPhotoImage.frame = CGRect(x: 0, y: 0, width: newWidth, height: newHeight)
-            }
+        if let image = cellPhoto.image {
+            cell.cellPhotoImage.image = image
+            let screenSize: CGRect = UIScreen.mainScreen().bounds
+            let newWidth = screenSize.width
+            let newHeight = cellPhoto.targetHeight(newWidth)
+            cell.cellPhotoImage.frame = CGRect(x: 0, y: 0, width: newWidth, height: newHeight)
         }
 
         return cell
@@ -62,7 +60,7 @@ class PhotoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let photo = photos[indexPath.row]
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let newHeight = photo.resizedHeight( screenSize.width )
+        let newHeight = photo.targetHeight( screenSize.width )
         return newHeight
     }
     
