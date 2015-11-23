@@ -10,6 +10,8 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    // MARK: - Defaults
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

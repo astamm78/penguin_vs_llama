@@ -14,6 +14,8 @@ class PhotoTableViewController: UITableViewController {
     var photos: [Photo] = []
     var pageNumber: Int = 0
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var tagNameLabel: UILabel?
 
     // MARK: - Defaults

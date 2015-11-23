@@ -15,9 +15,13 @@ class StartViewController: UIViewController {
     var llamaViewController: PhotoTableViewController?
     var penguinViewController: PhotoTableViewController?
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var penguinImageView: UIImageView!
     @IBOutlet weak var llamaImageView: UIImageView!
 
+    // MARK: - Defaults
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         animalImageViewsArray += [penguinImageView, llamaImageView]
@@ -42,6 +46,8 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Segue Action
+    
     @IBAction func showImagesTable(sender: AnyObject) {
         let animalImageView = sender.view as! UIImageView!
         
