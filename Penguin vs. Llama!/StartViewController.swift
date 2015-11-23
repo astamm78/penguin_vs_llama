@@ -12,14 +12,21 @@ class StartViewController: UIViewController {
     
     var animalImageViewsArray: [UIImageView] = []
     
+    var llamaViewController: PhotoTableViewController?
+    var penguinViewController: PhotoTableViewController?
+    
     @IBOutlet weak var penguinImageView: UIImageView!
     @IBOutlet weak var llamaImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         animalImageViewsArray += [penguinImageView, llamaImageView]
+        
+        llamaViewController = self.navigationController?.storyboard?.instantiateViewControllerWithIdentifier("PhotoTable") as? PhotoTableViewController
+        penguinViewController = self.navigationController?.storyboard?.instantiateViewControllerWithIdentifier("PhotoTable") as? PhotoTableViewController
+        
+        llamaViewController!.tagName = "Llamas"
+        penguinViewController!.tagName = "Penguins"
         
         for index in 0..<animalImageViewsArray.count {
             let animal = Animals().data[index]
@@ -35,25 +42,18 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let photoTableViewController = segue.destinationViewController as! PhotoTableViewController
+    @IBAction func showImagesTable(sender: AnyObject) {
+        let animalImageView = sender.view as! UIImageView!
         
-        if segue.identifier == "showImagesTable" {
-            let animalImageView = sender!.view as! UIImageView!
-            if let index = animalImageViewsArray.indexOf(animalImageView) {
-                let tagName = Animals().data[index]["tagName"]!
-                sendTagToPhotoView(tagName, view: photoTableViewController)
+        if let index = animalImageViewsArray.indexOf(animalImageView) {
+            let tagName = Animals().data[index]["tagName"]!
+            
+            if tagName == "Penguins" {
+                self.navigationController!.pushViewController(penguinViewController!, animated: true)
+            } else {
+                self.navigationController!.pushViewController(llamaViewController!, animated: true)
             }
         }
     }
-
-    func sendTagToPhotoView(tagName: String, view: PhotoTableViewController) {
-        view.tagName = tagName
-    }
-
-    @IBAction func showImagesTable(sender: AnyObject) {
-        performSegueWithIdentifier("showImagesTable", sender: sender)
-    }
-    
     
 }

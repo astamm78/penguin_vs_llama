@@ -16,10 +16,14 @@ class PhotoTableViewController: UITableViewController {
 
     @IBOutlet weak var tagNameLabel: UILabel?
 
+    // MARK: - Defaults
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         if let _ = tagName {
+        showLoadingView(true)
+        
+        if let _ = tagName {
             retrievePhotos()
          }
     }
@@ -32,12 +36,10 @@ class PhotoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return photos.count
     }
 
@@ -64,11 +66,30 @@ class PhotoTableViewController: UITableViewController {
         return newHeight
     }
     
+    // MARK: - Loading Screen
     
-    
+    func showLoadingView(showView: Bool) {
+        let loadingView = NSBundle.mainBundle().loadNibNamed("Loading", owner: self, options: nil).last as? UIView
+        if showView {
+            let width = tableView.frame.width
+            let height = tableView.frame.height
+            let yOffset = tableView.contentOffset.y
+            
+            loadingView?.frame = CGRect(x: 0, y: yOffset, width: width, height: height)
+            self.view.addSubview(loadingView!)
+        } else {
+            for subview in self.view.subviews {
+                if (subview is LoadingView) {
+                    subview.removeFromSuperview()
+                }
+            }
+        }
+    }
+
     // MARK: - Photo Fetching
     
     @IBAction func loadMorePhotos() {
+        showLoadingView(true)
         retrievePhotos()
     }
 
@@ -85,6 +106,7 @@ class PhotoTableViewController: UITableViewController {
                     self.tagNameLabel?.text = "\(self.tagName!)"
                     
                     self.tableView.reloadData()
+                    self.showLoadingView(false)
                 }
             }
         }
