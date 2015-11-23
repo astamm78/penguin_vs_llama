@@ -11,26 +11,26 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALu-s8-N3l">
-                    <rect key="frame" x="267" y="289" width="66" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Photos..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALu-s8-N3l">
+                    <rect key="frame" x="234" y="289" width="133" height="21"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="66" id="ILx-I1-gqe"/>
+                        <constraint firstAttribute="width" constant="133" id="ILx-I1-gqe"/>
                         <constraint firstAttribute="height" constant="21" id="Ins-8y-YFN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="C3W-YZ-URi">
-                    <rect key="frame" x="290" y="250" width="20" height="20"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C3W-YZ-URi">
+                    <rect key="frame" x="282" y="241" width="37" height="37"/>
                     <animations/>
                 </activityIndicatorView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="ALu-s8-N3l" firstAttribute="top" secondItem="C3W-YZ-URi" secondAttribute="bottom" constant="19" id="792-j2-shq"/>
+                <constraint firstItem="ALu-s8-N3l" firstAttribute="top" secondItem="C3W-YZ-URi" secondAttribute="bottom" constant="11" id="792-j2-shq"/>
                 <constraint firstItem="ALu-s8-N3l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TTD-ru-Htl"/>
                 <constraint firstItem="C3W-YZ-URi" firstAttribute="centerX" secondItem="ALu-s8-N3l" secondAttribute="centerX" id="eEf-MS-ddY"/>
                 <constraint firstItem="ALu-s8-N3l" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uFM-sl-E0r"/>
