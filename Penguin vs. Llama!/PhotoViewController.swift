@@ -11,10 +11,6 @@ import UIKit
 class PhotoViewController: UIViewController {
 
     var photo: Photo?
-    
-    // MARK: - Outlets
-
-    @IBOutlet weak var detailImageView: UIImageView!
 
     // MARK: - Defaults
     
@@ -22,7 +18,15 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
 
         if let selectedPhoto = photo {
-            detailImageView.image = selectedPhoto.image
+            let imageView = UIImageView()
+
+            let screenSize: CGRect = UIScreen.mainScreen().bounds
+            let yOffset = (self.navigationController!.navigationBar.frame.size.height + 40)
+            let newWidth = screenSize.width
+            let newHeight = photo!.targetHeight(newWidth)
+            imageView.frame = CGRect(x: 0, y: yOffset, width: newWidth, height: newHeight)
+            imageView.image = selectedPhoto.image
+            self.view.addSubview(imageView)
         }
     }
 
@@ -30,8 +34,8 @@ class PhotoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
+    
     // MARK: - Button Functions
     
     @IBAction func viewSource() {
