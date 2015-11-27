@@ -13,6 +13,7 @@ class PhotoViewController: UIViewController {
     var photo: Photo?
     
     // MARK: - Outlets
+
     @IBOutlet weak var detailImageView: UIImageView!
 
     // MARK: - Defaults
