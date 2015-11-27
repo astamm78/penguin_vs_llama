@@ -10,12 +10,19 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
+    var photo: Photo?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var detailImageView: UIImageView!
+
     // MARK: - Defaults
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let selectedPhoto = photo {
+            detailImageView.image = selectedPhoto.image
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +31,28 @@ class PhotoViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - Button Functions
+    
+    @IBAction func viewSource() {
+        if let selectedPhoto = photo,
+        let urlString = selectedPhoto.contextUrl {
+            openInSafari(urlString)
+        }
     }
-    */
+    
+    @IBAction func viewOriginalImage() {
+        if let selectedPhoto = photo,
+        let urlString = selectedPhoto.url {
+            openInSafari(urlString)
+        }
+    }
+    
+    // MARK: - Open in Safari
+    
+    private func openInSafari(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
 
 }

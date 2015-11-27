@@ -52,22 +52,11 @@ class PhotoTableViewController: UITableViewController {
         
         if let image = cellPhoto.image {
             cell.cellPhotoImage.image = image
-            let screenSize: CGRect = UIScreen.mainScreen().bounds
-            let newWidth = screenSize.width
-            let newHeight = cellPhoto.targetHeight(newWidth)
-            cell.cellPhotoImage.frame = CGRect(x: 0, y: 0, width: newWidth, height: newHeight)
         }
 
         return cell
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let photo = photos[indexPath.row]
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let newHeight = photo.targetHeight( screenSize.width )
-        return newHeight
-    }
-    
     // MARK: - Loading Screen
     
     func showLoadingView(showView: Bool) {
@@ -88,6 +77,17 @@ class PhotoTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showPhotoDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let photo = photos[indexPath.row]
+                (segue.destinationViewController as! PhotoViewController).photo = photo
+            }
+        }
+    }
+    
     // MARK: - Photo Fetching
     
     @IBAction func loadMorePhotos() {
