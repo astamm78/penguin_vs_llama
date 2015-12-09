@@ -11,7 +11,7 @@ import UIKit
 class PhotoTableViewController: UITableViewController {
     
     var tagName: String?
-    var photos: [Photo] = []
+    var photos: [FlickrPhoto] = []
     var pageNumber: Int = 0
 
     // MARK: - Outlets
@@ -106,10 +106,10 @@ class PhotoTableViewController: UITableViewController {
 
     func retrievePhotos() {
         pageNumber += 1
+
+        let imageService = FlickrImageService(tagName: tagName!, start: pageNumber)
         
-        let googleImageService = GoogleImageService(tagName: tagName!, start: pageNumber)
-        
-        googleImageService.getPhotos() {
+        imageService.getPhotos() {
             (let photos) in
             if let photoResults = photos {
                 dispatch_async(dispatch_get_main_queue()) {

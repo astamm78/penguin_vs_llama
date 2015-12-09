@@ -236,16 +236,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOG-U8-20G">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asx-EG-Z19">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <state key="normal" title="View Source"/>
-                                        <connections>
-                                            <action selector="viewSource" destination="Fw1-bU-NJK" eventType="touchUpInside" id="SgP-gD-EQR"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-Nm-RcI">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="XYD-N3-HLL"/>
+                                            <constraint firstAttribute="height" constant="30" id="sAp-Wa-jXt"/>
+                                        </constraints>
                                         <state key="normal" title="View Original Image"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XYD-N3-HLL"/>
+                                                <exclude reference="sAp-Wa-jXt"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="XYD-N3-HLL"/>
+                                                <include reference="sAp-Wa-jXt"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="viewOriginalImage" destination="Fw1-bU-NJK" eventType="touchUpInside" id="tvQ-P3-04w"/>
                                         </connections>
@@ -253,44 +262,36 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8ct-Nm-RcI" secondAttribute="trailing" constant="8" id="2ZG-6X-9Bg"/>
-                                    <constraint firstItem="Asx-EG-Z19" firstAttribute="leading" secondItem="cOG-U8-20G" secondAttribute="leading" constant="8" id="5Or-0l-zkm"/>
-                                    <constraint firstItem="8ct-Nm-RcI" firstAttribute="centerY" secondItem="cOG-U8-20G" secondAttribute="centerY" id="Oyu-ba-y3k"/>
+                                    <constraint firstItem="8ct-Nm-RcI" firstAttribute="trailing" secondItem="cOG-U8-20G" secondAttribute="trailingMargin" id="Ar8-Bg-4e5"/>
                                     <constraint firstAttribute="height" constant="45" id="qFg-cp-WVT"/>
-                                    <constraint firstItem="Asx-EG-Z19" firstAttribute="centerY" secondItem="cOG-U8-20G" secondAttribute="centerY" id="wbO-9Q-zuI"/>
+                                    <constraint firstItem="8ct-Nm-RcI" firstAttribute="top" secondItem="cOG-U8-20G" secondAttribute="topMargin" id="rIP-lh-Iox"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Asx-EG-Z19"/>
                                         <exclude reference="8ct-Nm-RcI"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="qFg-cp-WVT"/>
-                                        <exclude reference="2ZG-6X-9Bg"/>
-                                        <exclude reference="Oyu-ba-y3k"/>
-                                        <exclude reference="5Or-0l-zkm"/>
-                                        <exclude reference="wbO-9Q-zuI"/>
+                                        <exclude reference="Ar8-Bg-4e5"/>
+                                        <exclude reference="rIP-lh-Iox"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="Asx-EG-Z19"/>
                                         <include reference="8ct-Nm-RcI"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="qFg-cp-WVT"/>
-                                        <include reference="2ZG-6X-9Bg"/>
-                                        <include reference="Oyu-ba-y3k"/>
-                                        <include reference="5Or-0l-zkm"/>
-                                        <include reference="wbO-9Q-zuI"/>
+                                        <include reference="Ar8-Bg-4e5"/>
+                                        <include reference="rIP-lh-Iox"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="cOG-U8-20G" firstAttribute="leading" secondItem="moc-Je-bt7" secondAttribute="leadingMargin" constant="-20" id="8zW-Z9-WIU"/>
                             <constraint firstItem="of9-4T-GyN" firstAttribute="top" secondItem="cOG-U8-20G" secondAttribute="bottom" id="FIa-jq-tIq"/>
+                            <constraint firstItem="cOG-U8-20G" firstAttribute="leading" secondItem="moc-Je-bt7" secondAttribute="leading" id="XLb-pF-8rF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cOG-U8-20G" secondAttribute="trailing" constant="-20" id="xbN-fW-j3q"/>
                         </constraints>
                         <variation key="default">
@@ -298,9 +299,9 @@
                                 <exclude reference="cOG-U8-20G"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FIa-jq-tIq"/>
-                                <exclude reference="8zW-Z9-WIU"/>
+                                <exclude reference="XLb-pF-8rF"/>
                                 <exclude reference="xbN-fW-j3q"/>
+                                <exclude reference="FIa-jq-tIq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -308,9 +309,9 @@
                                 <include reference="cOG-U8-20G"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FIa-jq-tIq"/>
-                                <include reference="8zW-Z9-WIU"/>
+                                <include reference="XLb-pF-8rF"/>
                                 <include reference="xbN-fW-j3q"/>
+                                <include reference="FIa-jq-tIq"/>
                             </mask>
                         </variation>
                     </view>

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Photo {
+struct GooglePhoto {
     
     var url: String?
     var tbUrl: String?

@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoViewController: UIViewController {
 
-    var photo: Photo?
+    var photo: FlickrPhoto?
 
     // MARK: - Defaults
     
@@ -37,13 +37,6 @@ class PhotoViewController: UIViewController {
 
     
     // MARK: - Button Functions
-    
-    @IBAction func viewSource() {
-        if let selectedPhoto = photo,
-        let urlString = selectedPhoto.contextUrl {
-            openInSafari(urlString)
-        }
-    }
     
     @IBAction func viewOriginalImage() {
         if let selectedPhoto = photo,

@@ -16,13 +16,13 @@ struct GoogleImageService {
         clientBaseUrl = NSURL(string: "https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=\(tagName)&as_filetype=jpg&start=\((start - 1) * 4)")
     }
     
-    func getPhotos(completion: ([Photo]? -> Void)) {
+    func getPhotos(completion: ([GooglePhoto]? -> Void)) {
         let networkOperation = NetworkOperation(url: clientBaseUrl!)
         networkOperation.downloadJSONFromURL {
             (let JSONDictionary) in
             if let responseData = JSONDictionary!["responseData"] as? [String: AnyObject] {
                 if let results = responseData["results"] as? [[String: AnyObject]] {
-                    let photos = results.map() { Photo(photoData: $0) }
+                    let photos = results.map() { GooglePhoto(photoData: $0) }
                      completion(photos)
                 }
             }
