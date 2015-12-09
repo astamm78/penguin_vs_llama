@@ -22,8 +22,13 @@ struct Photo {
 
         if let url = photoData["url"] as? String {
             self.url = url
-            let photoURL = NSURL(string: url)
-            self.image = UIImage(data: dataFromUrl(photoURL!))
+            if let photoURL = NSURL(string: url) {
+                if let urlData = dataFromUrl(photoURL) {
+                    if let imageData = UIImage(data: urlData) {
+                        self.image = imageData
+                    }
+                }
+            }
         }
         
         if let tbUrl = photoData["tbUrl"] as? String {
@@ -50,8 +55,8 @@ struct Photo {
         return (CGFloat(height!) / CGFloat(width!)) * screenWidth
     }
     
-    func dataFromUrl(url: NSURL) -> NSData {
-        return NSData(contentsOfURL: url)!
+    func dataFromUrl(url: NSURL) -> NSData? {
+        return NSData(contentsOfURL: url)
     }
     
 }

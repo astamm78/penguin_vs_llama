@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g0x-cj-rP2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g0x-cj-rP2">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,6 @@
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="2z1-yG-d7t">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <animations/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="5Jg-ae-r4k"/>
@@ -35,7 +35,6 @@
                                     </imageView>
                                     <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pTU-mq-9Pf">
                                         <rect key="frame" x="0.0" y="225" width="200" height="200"/>
-                                        <animations/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Olx-MS-HNL"/>
@@ -46,7 +45,6 @@
                                         </connections>
                                     </imageView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="IWM-NA-1DT"/>
@@ -58,7 +56,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UhF-iD-u63" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="849-Ae-FKm"/>
@@ -104,7 +101,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="187" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qZ-lb-DYD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="pqT-La-2er">
@@ -113,7 +109,6 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penguin or Llama" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqP-S1-OOP">
                                     <rect key="frame" x="234" y="14" width="132" height="21"/>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="132" id="Vt6-Sm-bM0">
                                             <variation key="heightClass=regular-widthClass=compact" constant="384"/>
@@ -127,7 +122,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <animations/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="CqP-S1-OOP" firstAttribute="centerY" secondItem="pqT-La-2er" secondAttribute="centerY" id="mWa-R5-31g">
@@ -139,7 +133,6 @@
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hLr-xd-mQB">
                             <rect key="frame" x="0.0" y="178" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <animations/>
                             <items>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="xZi-lO-dQH"/>
                                 <barButtonItem title="Load More Photos" id="3Z6-Zc-uxc">
@@ -160,7 +153,6 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Krc-Hx-dIF">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="rH1-mg-iHo">
@@ -179,7 +171,6 @@
                                             </variation>
                                         </imageView>
                                     </subviews>
-                                    <animations/>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="Krc-Hx-dIF"/>
@@ -191,7 +182,6 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="Krc-Hx-dIF" firstAttribute="top" secondItem="RNR-Yv-Whs" secondAttribute="top" id="L1e-In-QSh"/>
                                     <constraint firstAttribute="trailing" secondItem="Krc-Hx-dIF" secondAttribute="trailing" id="Rjg-Ai-z5K"/>
@@ -229,7 +219,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqQ-Jx-h41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="-157.5"/>
+            <point key="canvasLocation" x="2130" y="-157.5"/>
         </scene>
         <!--Photo View Controller-->
         <scene sceneID="esz-TP-vra">
@@ -248,7 +238,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asx-EG-Z19">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="View Source"/>
                                         <connections>
                                             <action selector="viewSource" destination="Fw1-bU-NJK" eventType="touchUpInside" id="SgP-gD-EQR"/>
@@ -256,14 +245,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-Nm-RcI">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <animations/>
                                         <state key="normal" title="View Original Image"/>
                                         <connections>
                                             <action selector="viewOriginalImage" destination="Fw1-bU-NJK" eventType="touchUpInside" id="tvQ-P3-04w"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="8ct-Nm-RcI" secondAttribute="trailing" constant="8" id="2ZG-6X-9Bg"/>
@@ -279,10 +266,10 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="qFg-cp-WVT"/>
-                                        <exclude reference="5Or-0l-zkm"/>
-                                        <exclude reference="wbO-9Q-zuI"/>
                                         <exclude reference="2ZG-6X-9Bg"/>
                                         <exclude reference="Oyu-ba-y3k"/>
+                                        <exclude reference="5Or-0l-zkm"/>
+                                        <exclude reference="wbO-9Q-zuI"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -292,15 +279,14 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="qFg-cp-WVT"/>
-                                        <include reference="5Or-0l-zkm"/>
-                                        <include reference="wbO-9Q-zuI"/>
                                         <include reference="2ZG-6X-9Bg"/>
                                         <include reference="Oyu-ba-y3k"/>
+                                        <include reference="5Or-0l-zkm"/>
+                                        <include reference="wbO-9Q-zuI"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cOG-U8-20G" firstAttribute="leading" secondItem="moc-Je-bt7" secondAttribute="leadingMargin" constant="-20" id="8zW-Z9-WIU"/>
@@ -312,9 +298,9 @@
                                 <exclude reference="cOG-U8-20G"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="FIa-jq-tIq"/>
                                 <exclude reference="8zW-Z9-WIU"/>
                                 <exclude reference="xbN-fW-j3q"/>
-                                <exclude reference="FIa-jq-tIq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -322,9 +308,9 @@
                                 <include reference="cOG-U8-20G"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="FIa-jq-tIq"/>
                                 <include reference="8zW-Z9-WIU"/>
                                 <include reference="xbN-fW-j3q"/>
-                                <include reference="FIa-jq-tIq"/>
                             </mask>
                         </variation>
                     </view>
@@ -341,7 +327,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mr5-Wd-ffd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

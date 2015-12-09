@@ -58,7 +58,12 @@ class PhotoTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100.0
+        let cellPhoto = photos[indexPath.row]
+        if let _ = cellPhoto.image {
+            return 100.0
+        } else {
+            return 0.0
+        }
     }
 
     // MARK: - Loading Screen
